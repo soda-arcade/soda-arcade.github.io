@@ -1,0 +1,207 @@
+<div class="panel">
+    <div class="panel-header">
+        <h1>Theme Creator</h1>
+    </div>
+    <div class="panel-body">
+        This tool allows you to create a custom colour themes for FlareCast. You can change the colours of various elements in the app. 
+        Once you are done, you can download the theme as a JSON file and drop it in the FlareCast theme folder.
+        <br><br>
+        <div class="form-group">
+            <label for="themeName">Theme Name</label>
+            <input type="text" id="themeName" class="form-control" placeholder="Enter theme name" value="Custom" />
+            <div class="form-help">This will be the name of the theme when you download it.</div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-primary" onclick="downloadTheme()">Download</button>
+        <button class="btn secondary" onclick="alert('Reset to default theme')">Reset</button>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-header">
+        <h1>Panels</h1>
+    </div>
+    <div class="panel-body" style="padding: 0px;">
+        {% include flarecast/color-picker.html id="panelBackground" title="Background" %}
+        {% include flarecast/color-picker.html id="panelBorder" title="Border" %}
+        {% include flarecast/color-picker.html id="panelBorderActive" title="Active Border" %}
+        {% include flarecast/color-picker.html id="panelText" title="Text" %}
+        {% include flarecast/color-picker.html id="panelTitleBar" title="Title Bar Background" %}
+        {% include flarecast/color-picker.html id="panelTitleBarText" title="Title Bar Text" %}
+        {% include flarecast/color-picker.html id="panelTitleBarActive" title="Active Title Bar Background" %}
+        {% include flarecast/color-picker.html id="panelTitleBarActiveText" title="Active Title Bar Text" %}
+        {% include flarecast/color-picker.html id="panelFooter" title="Footer Background" %}
+        {% include flarecast/color-picker.html id="panelFooterText" title="Footer Text" %}
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-header">
+        <h1>Tabs</h1>
+    </div>
+    <div class="panel-body" style="padding: 0px;">
+        {% include flarecast/color-picker.html id="tabsBackground" title="Background" %}
+        {% include flarecast/color-picker.html id="tabsBorder" title="Border" %}
+        {% include flarecast/color-picker.html id="tab" title="Tab Background" %}
+        {% include flarecast/color-picker.html id="tabText" title="Tab Text" %}
+        {% include flarecast/color-picker.html id="tabHovered" title="Hovered Tab Background" %}
+        {% include flarecast/color-picker.html id="tabActive" title="Active Tab Background" %}
+        {% include flarecast/color-picker.html id="tabActiveText" title="Active Tab Text" %}
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-header">
+        <h1>Navbar</h1>
+    </div>
+    <div class="panel-body" style="padding: 0px;">
+        {% include flarecast/color-picker.html id="navbarBackground" title="Background" %}
+        {% include flarecast/color-picker.html id="navbarBorder" title="Border" %}
+        {% include flarecast/color-picker.html id="navbarIcon" title="Icon" %}
+        {% include flarecast/color-picker.html id="navbarIconActive" title="Active Icon" %}
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-header">
+        <h1>Form</h1>
+    </div>
+    <div class="panel-body" style="padding: 0px;">
+        {% include flarecast/color-picker.html id="formLabel" title="Label" %}
+        {% include flarecast/color-picker.html id="formInputBackground" title="Input Background" %}
+        {% include flarecast/color-picker.html id="formInputBorder" title="Input Border" %}
+        {% include flarecast/color-picker.html id="formInputBorderActive" title="Active Input Border" %}
+        {% include flarecast/color-picker.html id="formInputText" title="Input Text" %}
+        {% include flarecast/color-picker.html id="formInputTextActive" title="Active Input Text" %}
+        {% include flarecast/color-picker.html id="formHelpText" title="Help Text" %}
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-header">
+        <h1>Buttons</h1>
+    </div>
+    <div class="panel-body" style="padding: 0px;">
+        {% include flarecast/color-picker.html id="buttonPrimary" title="Primary Background" %}
+        {% include flarecast/color-picker.html id="buttonPrimaryBorder" title="Primary Border" %}
+        {% include flarecast/color-picker.html id="buttonPrimaryText" title="Primary Text" %}
+        {% include flarecast/color-picker.html id="buttonPrimaryHovered" title="Hovered Primary Background" %}
+        {% include flarecast/color-picker.html id="buttonPrimaryHoveredText" title="Hovered Primary Text" %}
+        {% include flarecast/color-picker.html id="buttonPrimaryActive" title="Active Primary Background" %}
+        {% include flarecast/color-picker.html id="buttonPrimaryActiveText" title="Active Primary Text" %}
+        {% include flarecast/color-picker.html id="buttonPrimaryDisabled" title="Disabled Primary Background" %}
+        {% include flarecast/color-picker.html id="buttonSecondary" title="Secondary Background" %}
+        {% include flarecast/color-picker.html id="buttonSecondaryBorder" title="Secondary Border" %}
+        {% include flarecast/color-picker.html id="buttonSecondaryText" title="Secondary Text" %}
+        {% include flarecast/color-picker.html id="buttonSecondaryHovered" title="Hovered Secondary Background" %}
+        {% include flarecast/color-picker.html id="buttonSecondaryHoveredText" title="Hovered Secondary Text" %}
+        {% include flarecast/color-picker.html id="buttonSecondaryActive" title="Active Secondary Background" %}
+        {% include flarecast/color-picker.html id="buttonSecondaryActiveText" title="Active Secondary Text" %}
+        {% include flarecast/color-picker.html id="buttonSecondaryDisabled" title="Disabled Secondary Background" %}
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-header">
+        <h1>Misc</h1>
+    </div>
+    <div class="panel-body" style="padding: 0px;">
+        {% include flarecast/color-picker.html id="positive" title="Positive" %}
+        {% include flarecast/color-picker.html id="negative" title="Negative" %}
+    </div>
+</div>
+
+<script>
+
+var theme = {
+    panelBackground: "#312E2B",
+    panelBorder: "#FFFFFF33",
+    panelBorderActive: "#B04329",
+    panelText: "#F2EED4",
+    panelTitleBar: "#F2EED4",
+    panelTitleBarText: "#312E2B",
+    panelTitleBarActive: "#B04329",
+    panelTitleBarActiveText: "#FFFFFF",
+    panelFooter: "#292623",
+    panelFooterText: "#B3B3B3",
+
+    tabsBackground: "#292623",
+    tabsBorder: "#B04329",
+    tab: "#F2EED4",
+    tabText: "#312E2B",
+    tabHovered: "#B64C2D",
+    tabActive: "#B04329",
+    tabActiveText: "#FFFFFF",
+
+    navbarBackground: "#101010",
+    navbarBorder: "#262626",
+    navbarIcon: "#FFFFFF26",
+    navbarIconActive: "#C76554",
+
+    formLabel: "#F2EED4",
+    formInputBackground: "#191919",
+    formInputBorder: "#262626",
+    formInputBorderActive: "#0077CC",
+    formInputText: "#B3B3B3",
+    formInputTextActive: "#FFFFFF",
+    formHelpText: "#E8CC40",
+
+    buttonPrimary: "#B04329",
+    buttonPrimaryBorder: "#B04329",
+    buttonPrimaryText: "#FFFFFF",
+    buttonPrimaryHovered: "#B64C2D",
+    buttonPrimaryHoveredText: "#FFFFFF",
+    buttonPrimaryActive: "#B84D2E",
+    buttonPrimaryActiveText: "#FFFFFF",
+    buttonPrimaryDisabled: "#262626",
+
+    buttonSecondary: "#F2EED4",
+    buttonSecondaryBorder: "#00000033",
+    buttonSecondaryText: "#312E2B",
+    buttonSecondaryHovered: "#FAF4DA",
+    buttonSecondaryHoveredText: "#312E2B",
+    buttonSecondaryActive: "#0077CC",
+    buttonSecondaryActiveText: "#FFFFFF",
+    buttonSecondaryDisabled: "#262626",
+
+    positive: "#8CC08C",
+    negative: "#CC7373",
+};
+
+function initColorPicker() {
+    // Set value for all the color pickers
+    // Convert all theme keys to an array
+    var themeKeys = Object.keys(theme);
+    // Loop through the theme keys and set the value of the color picker
+    for (var i = 0; i < themeKeys.length; i++) {
+        var key = themeKeys[i];
+        // Set the value of the color picker to the value of the theme key
+        document.getElementById(key).value = theme[key];
+    }
+}
+
+function updateColor(id, color) {
+    alert("Updating color for " + id + " to " + color);
+}
+
+function downloadTheme() {
+    // Get the theme name from the input field
+    var themeName = document.getElementById("themeName").value;
+    if (themeName === "") {
+        themeName = "Custom";
+    }
+    // Create a JSON object from the theme object
+    var themeJSON = JSON.stringify(theme, null, 4);
+    // Create a blob from the JSON object
+    var blob = new Blob([themeJSON], { type: "application/json" });
+    // Create a link to download the blob
+    var link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = themeName + ".json";
+    // Click the link to download the file
+    link.click();
+}
+
+initColorPicker();
+</script>

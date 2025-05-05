@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlareCast | {{ page.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="flarecast">
+        <div class="wrapper">
+            <header class="header">
+                <div class="logo">
+                    <a href="https://flarecast.soda-arcade.com"><img src="/assets/images/flarecast/logo.svg" alt="FlareCast Logo"></a>
+                </div>
+            </header>
+
+            <nav class="navbar">
+                <a href="/pages/flarecast/" class="{% if page.title == 'Home' %}active{% endif %}">Home</a>
+                <a href="/pages/flarecast/download" class="{% if page.title == 'Download' %}active{% endif %}">Download</a>
+                <div class="dropdown-container">
+                    <a href="/pages/flarecast/development" class="{% if page.group == 'Development' %}active{% endif %}">Development</a>
+                    <div class="dropdown">
+                        <a href="/pages/flarecast/development">Development</a>
+                        <a href="/pages/flarecast/theme-creator">Theme Creator</a>
+                    </div>
+                </div>
+                <div class="dropdown-container">
+                    <a href="#" class="{% if page.group == 'Support' %}active{% endif %}">Support</a>
+                    <div class="dropdown">
+                        <a href="/pages/flarecast/development">Discord</a>
+                        <a href="/pages/flarecast/theme-creator">Wiki</a>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="content">
+                {% for panel in page.data.panels %}
+                    {% include flarecast/panel.html title=panel.title content=panel.content %}
+                {% endfor %}
+
+                {% if page.creator %}
+                    {% include flarecast/theme-creator.html %}
+                {% endif %}
+            </main>
+
+            <footer class="footer">
+                <p>&copy; 2025 Soda Arcade. All rights reserved.</p>
+                <p>Powered by <a href="https://soda-arcade.com">Soda Arcade</a></p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

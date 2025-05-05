@@ -1,0 +1,65 @@
+#soda-app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #332e56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.soda-arcade-logo {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+    
+    .sign {
+        filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.2));
+    }
+    
+    .pink,
+    .cream {
+        fill: #1b1b1b;
+        opacity: 0.8;
+        transition: all 1s ease-in-out;
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0));
+    }
+    
+    .pink.enter {
+        fill: #eb6ca5;
+        opacity: 1;
+        filter: drop-shadow(0px 0px 10px rgba(#eb6ca5, 0.8));
+        transition: all .5s ease-in-out;
+    }
+    
+    .cream.enter {
+        fill: #f0a69f;
+        opacity: 1;
+        filter: drop-shadow(0px 0px 10px rgba(#f0a69f, 0.8));
+        transition: all .5s ease-in-out;
+    }
+    
+    .pink.flicker-out {
+        fill: rgba(235, 108, 165, 0.5);
+        opacity: 0.8;
+        filter: drop-shadow(0px 0px 10px rgba(#eb6ca5, 0.4));
+    }
+    
+    .cream.flicker-out {
+        fill: rgba(240, 166, 159, 0.5);
+        opacity: 0.8;
+        filter: drop-shadow(0px 0px 10px rgba(#f0a69f, 0.4));
+    }
+
+}
